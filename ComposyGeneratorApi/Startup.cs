@@ -24,13 +24,13 @@ namespace ComposyGeneratorApi
             //    routeTemplate: "api/{controller}/{id}",
             //    defaults: new { id = RouteParameter.Optional }
             //);
-            appBuilder.UseStaticFile(new StaticFileMiddlewareOptions
-            {
-                RootDirectory = @"C:\inetpub\wwwroot",
-                DefaultFile = "iisstart.htm",
-                EnableETag = true,
-                MimeTypeProvider = new MimeTypeProvider()
-            });
+            //appBuilder.UseStaticFile(new StaticFileMiddlewareOptions
+            //{
+            //    RootDirectory = @"C:\inetpub\wwwroot",
+            //    DefaultFile = "iisstart.htm",
+            //    EnableETag = true,
+            //    MimeTypeProvider = new MimeTypeProvider()
+            //});
 
             appBuilder.UseWebApi(config);
             appBuilder.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);

@@ -12,12 +12,16 @@ namespace ComposyGeneratorApi
     {
         static void Main(string[] args)
         {
-            string baseAddress = "http://127.0.0.1:9000/";
+            StartOptions options = new StartOptions();
+            options.Urls.Add("http://localhost:8080");
+            options.Urls.Add("http://127.0.0.1:8080");
+            options.Urls.Add($"http://{Environment.MachineName}:8080");
+            options.Urls.Add("http://52.166.0.186:8080");
 
             // Start OWIN host 
-            using (WebApp.Start<Startup>(url: baseAddress))
+            using (WebApp.Start<Startup>(options))
             {
-                Console.WriteLine("Api is up with 9000 port");
+                Console.WriteLine("Api is up with 8080 port");
                 // Create HttpCient and make a request to api/values 
                 //HttpClient client = new HttpClient();
 
